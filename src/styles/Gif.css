@@ -1,0 +1,23 @@
+.gifs {
+  /* width: 14rem; */
+  height: min-content;
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.gifSpan {
+  position: absolute;
+  width: 100%;
+  background: rgba(46, 46, 46, .6);
+  bottom: 0;
+  padding: .2rem 0;
+  margin: 0 0 .5rem 0;
+  font-size: .8rem;
+  color: var(--contrast);
+}
+
+.imgGif {
+  width: 100%;
+  object-fit: contain;
+}

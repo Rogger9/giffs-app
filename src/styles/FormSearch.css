@@ -1,0 +1,35 @@
+.formSearch {
+  margin: 1rem 0;
+  height: 1.6rem;
+  gap: 1rem;
+}
+
+.inputSearch {
+  width: 14rem;
+  height: 100%;
+  border-radius: .2rem;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+}
+
+.inputSearch:focus {
+  box-shadow: 0 0 4px var(--white);
+}
+
+.btn {
+  height: 100%;
+  border-radius: .2rem;
+  outline: none;
+  background: var(--contrastLight);
+  border: 1px solid var(--contrast);
+  padding: 0 .8rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover, .btn:focus {
+  background: var(--contrast);
+}
+
+.btn:active { transform: scale(.94); }

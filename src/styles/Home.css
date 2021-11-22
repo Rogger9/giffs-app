@@ -1,0 +1,24 @@
+.titlePopularGifs {
+  display: flex;
+  font-size: 1.2rem;
+  padding: 1rem;
+  color: var(--contrast);
+}
+
+.ulHome {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  list-style-type: none;
+  gap: .6rem;
+  font-size: 1.1rem;
+}
+
+.linkHome {
+  margin: 0 .4rem;
+  color: var(--fontColor);
+}
+
+.linkHome:hover {
+  color: var(--contrast);
+}

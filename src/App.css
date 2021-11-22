@@ -1,0 +1,41 @@
+.App {
+  flex-direction: column;
+  /* min-height: calc(100vh - 2rem); */
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleApp {
+  flex-direction: column;
+  margin: 2rem 1rem;
+}
+
+.titleApp h1 {
+  color: #000;
+  font-weight: 900;
+}
+
+.borderR {
+  border-radius: .3rem;
+}
+
+.gifsContainer {
+  padding: 0 3rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.titleDetail {
+  color: var(--contrast);
+}
+
+.footer {
+  width: 100%;
+  height: 2rem;
+}
