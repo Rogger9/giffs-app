@@ -6,6 +6,7 @@ import debounce from 'just-debounce-it'
 
 const ListOfGifs = lazy(() => import('./ListOfGifs'))
 const NoResultsFound = lazy(() => import('./NoResultFound'))
+const ArrowUpCircle = lazy(() => import('./IconArrowUp'))
 
 const ShowGifs = ({ params }) => {
   const { keyword } = params
@@ -31,6 +32,7 @@ const ShowGifs = ({ params }) => {
       ? <Spinner />
       : <>
         { !noResultsFound && <h3 className="titlePopularGifs">{decodeURI(keyword.replace(/[-]/g, ' '))}</h3> }
+        <ArrowUpCircle />
         <ListOfGifs gifs={gifs} />
         <div id="visor" ref={externalRef}></div>
       </>
