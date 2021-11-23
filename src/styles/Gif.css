@@ -1,9 +1,9 @@
 .gifs {
-  /* width: 14rem; */
   height: min-content;
   position: relative;
   display: inline-block;
-  margin: 1rem;
+  background: var(--gray);
+  margin: .6rem;
   transition: transform .1s ease-in-out;
 }
 
@@ -19,7 +19,6 @@
 }
 
 .imgGif {
-  width: 100%;
   object-fit: contain;
 }
 

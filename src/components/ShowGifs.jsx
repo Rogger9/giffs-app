@@ -12,7 +12,7 @@ const ShowGifs = ({ params }) => {
   const { loading, gifs, setPage, noResultsFound } = useGifs({ keyword })
   const externalRef = useRef()
   const { isNearScreen } = useNearScreen({
-    distance: '400px',
+    distance: '360px',
     externalRef: loading ? null : externalRef,
     once: false
   })
@@ -26,7 +26,6 @@ const ShowGifs = ({ params }) => {
   }, [debounceHandleNextPage, isNearScreen])
 
   return <>
-    { noResultsFound && <NoResultsFound keyword={keyword} /> }
     {
       loading
       ? <Spinner />
@@ -36,6 +35,7 @@ const ShowGifs = ({ params }) => {
         <div id="visor" ref={externalRef}></div>
       </>
     }
+    { noResultsFound && !loading && <NoResultsFound keyword={keyword} /> }
   </>
 }
 
