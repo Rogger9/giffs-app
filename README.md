@@ -1,0 +1,1 @@
+GIF web app built with React, connected to the Giphy API for educational purposes.
