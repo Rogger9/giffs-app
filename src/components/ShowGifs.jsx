@@ -1,13 +1,15 @@
-import { useCallback, useRef, useEffect } from 'react'
+import { lazy, useCallback, useRef, useEffect } from 'react'
 import { useGifs } from '../hooks/useGifs'
 import useNearScreen from '../hooks/useNearScreen'
-import ListOfGifs from './ListOfGifs'
 import Spinner from './Spinner'
 import debounce from 'just-debounce-it'
 
+const ListOfGifs = lazy(() => import('./ListOfGifs'))
+const NoResultsFound = lazy(() => import('./NoResultFound'))
+
 const ShowGifs = ({ params }) => {
   const { keyword } = params
-  const { loading, gifs, setPage } = useGifs({ keyword })
+  const { loading, gifs, setPage, noResultsFound } = useGifs({ keyword })
   const externalRef = useRef()
   const { isNearScreen } = useNearScreen({
     distance: '400px',
@@ -21,13 +23,15 @@ const ShowGifs = ({ params }) => {
 
   useEffect(() => {
     if (isNearScreen) debounceHandleNextPage()
-  }, [debounceHandleNextPage, isNearScreen] )
+  }, [debounceHandleNextPage, isNearScreen])
 
   return <>
-    { loading
+    { noResultsFound && <NoResultsFound keyword={keyword} /> }
+    {
+      loading
       ? <Spinner />
       : <>
-        <h3 className="titlePopularGifs">{decodeURI(keyword.replace(/[-]/g, ' '))}</h3>
+        { !noResultsFound && <h3 className="titlePopularGifs">{decodeURI(keyword.replace(/[-]/g, ' '))}</h3> }
         <ListOfGifs gifs={gifs} />
         <div id="visor" ref={externalRef}></div>
       </>

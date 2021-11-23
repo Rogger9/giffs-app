@@ -1,15 +1,22 @@
+import { lazy } from 'react'
 import { useGifs } from '../hooks/useGifs'
 import FormSearch from './FormSearch'
-import ListOfGifs from './ListOfGifs'
 import LazyTrending from './LazyTrending'
 import '../styles/Home.css'
 
+const ListOfGifs = lazy(() => import('./ListOfGifs'))
+const NoResultsFound = lazy(() => import('./NoResultFound'))
+
 const Home = () => {
-  const { gifs } = useGifs()
+  const { gifs, noResultsFound } = useGifs()
   return <>
     <FormSearch />
-    <h2 className="titlePopularGifs">Última búsqueda</h2>
-    <ListOfGifs gifs={gifs}/>
+    <h2 className="titlePopularGifs">Last search</h2>
+    {
+      noResultsFound
+      ? <NoResultsFound keyword="latest search" />
+      : <ListOfGifs gifs={gifs}/>
+    }
     <LazyTrending />
   </>
 }

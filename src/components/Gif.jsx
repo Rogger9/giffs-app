@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { Link, useLocation } from 'wouter'
 import '../styles/Gif.css'
 
-const Gif = ({ title, url, id, height, width }) => {
+const Gif = ({ title, url, id, width, height }) => {
   const [path] = useLocation()
   return <div className="gifs borderR">
     <Link to={`/gif/${id}`} className="gifLink">
@@ -10,6 +10,8 @@ const Gif = ({ title, url, id, height, width }) => {
         loading='lazy'
         className="borderR imgGif"
         src={url}
+        width={width}
+        height={height}
         alt={title}
       />
       {path !== `/gif/${id}` && <span className="gifSpan flex-center">{title}</span>}

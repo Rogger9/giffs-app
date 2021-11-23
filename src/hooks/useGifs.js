@@ -30,5 +30,7 @@ export const useGifs = ({ keyword } = { keyword: null }) => {
     setLoadingNextPage(false)
   }, [keywordToUse, page])
 
-  return { loading, loadingNextPage, gifs, setPage }
+  const noResultsFound = Object.entries(gifs).length === 0
+
+  return { loading, loadingNextPage, gifs, setPage, noResultsFound }
 }

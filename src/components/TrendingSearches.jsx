@@ -10,7 +10,7 @@ const TrendingSearches = () => {
     setTrends(res)
   }, [])
 
-  return <Category name='Tendencias' options={trends} />
+  return <Category name='Trends' options={trends} />
 }
 
 export default TrendingSearches
