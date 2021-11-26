@@ -7,7 +7,7 @@ const Category = ({ name, options = [] }) => (
       {
         options.map( gif => (
           <li key={gif}>
-            <Link to={`/search/${gif.trim().replace(/\s/g, '-')}`} className="linkHome">{gif}</Link>
+            <Link to={`/giffs/search/${gif.trim().replace(/\s/g, '-')}`} className="linkHome">{gif}</Link>
           </li>
         ))
       }

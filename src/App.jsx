@@ -12,16 +12,16 @@ const DetailPage = lazy(() => import('./components/Detail'))
 function App() {
   return <Suspense fallback={null}>
     <div className="App flex-center">
-    <Link to="/">
+    <Link to="/giffs">
       <a className="titleApp flex-center">
         <h1>Giffs</h1>
         <IconPlay />
       </a>
     </Link>
     <GifsContextProvider>
-      <Route path="/" component={HomePage} />
-      <Route path="/search/:keyword" component={ShowGifsPage} />
-      <Route path="/gif/:id" component={DetailPage} />
+      <Route path="/giffs" component={HomePage} />
+      <Route path="/giffs/search/:keyword" component={ShowGifsPage} />
+      <Route path="/giffs/gif/:id" component={DetailPage} />
     </GifsContextProvider>
     </div>
   </Suspense>

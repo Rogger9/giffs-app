@@ -10,7 +10,7 @@ const FormSearch = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     const normalizeKeyword = keyword.trim().replace(/\s/g, '-')
-    keyword.length > 0 && pushLocation(`/search/${normalizeKeyword}`)
+    keyword.length > 0 && pushLocation(`/giffs/search/${normalizeKeyword}`)
   }
 
   const handleChange = (e) => setKeyword(e.target.value)

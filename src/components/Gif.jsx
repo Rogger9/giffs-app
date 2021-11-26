@@ -5,7 +5,7 @@ import '../styles/Gif.css'
 const Gif = ({ title, url, id, width, height }) => {
   const [path] = useLocation()
   return <div className="gifs borderR">
-    <Link to={`/gif/${id}`} className="gifLink flex-center">
+    <Link to={`/giffs/gif/${id}`} className="gifLink flex-center">
       <img
         loading="lazy"
         className="borderR imgGif"
@@ -14,7 +14,7 @@ const Gif = ({ title, url, id, width, height }) => {
         height={height}
         alt={title}
       />
-      {path !== `/gif/${id}` && <span className="gifSpan flex-center">{title}</span>}
+      {path !== `/giffs/gif/${id}` && <span className="gifSpan flex-center">{title}</span>}
     </Link>
   </div >
 }
