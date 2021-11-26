@@ -31,13 +31,17 @@ const ShowGifs = ({ params }) => {
       loading
       ? <Spinner />
       : <>
-        { !noResultsFound && <h3 className="titlePopularGifs">{decodeURI(keyword.replace(/[-]/g, ' '))}</h3> }
-        <ArrowUpCircle />
-        <ListOfGifs gifs={gifs} />
-        <div id="visor" ref={externalRef}></div>
+        { noResultsFound
+        ? <NoResultsFound keyword={keyword} />
+        : <>
+            <h3 className="titlePopularGifs">{decodeURI(keyword.replace(/[-]/g, ' '))}</h3>
+            <ArrowUpCircle />
+            <ListOfGifs gifs={gifs} />
+            <div id="visor" ref={externalRef}></div>
+          </>
+        }
       </>
     }
-    { noResultsFound && !loading && <NoResultsFound keyword={keyword} /> }
   </>
 }
 
